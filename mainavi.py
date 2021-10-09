@@ -87,7 +87,7 @@ def main():
         name_list = driver.find_elements_by_css_selector(".cassetteRecruit .cassetteRecruit__name")
         title_list = driver.find_elements_by_css_selector(".cassetteRecruit .cassetteRecruit__copy")
         status_list = driver.find_elements_by_css_selector(".cassetteRecruit .labelEmploymentStatus")
-        table_list = driver.find_elements_by_css_selector(".cassetteRecruit .tableCondition__body")
+        table_list = driver.find_elements_by_css_selector(".cassetteRecruit .tableCondition")
     # 1ページ分繰り返し
         for name, title, status, table in zip(name_list, title_list, status_list, table_list):
             try:
