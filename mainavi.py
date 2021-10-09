@@ -84,10 +84,10 @@ def main():
     fail = 0
     while True:
     # 検索結果の一番上の会社名を取得
-        name_list = driver.find_elements_by_css_selector(".cassetteRecruit__heading .cassetteRecruit__name")
-        title_list = driver.find_elements_by_css_selector(".cassetteRecruit__heading .cassetteRecruit__copy")
-        status_list = driver.find_elements_by_css_selector(".cassetteRecruit_heading .labelEmploymentStatus")
-        table_list = driver.find_elements_by_css_selector(".cassetteRecruit__heading .tableCondition__body")
+        name_list = driver.find_elements_by_css_selector(".cassetteRecruit .cassetteRecruit__name")
+        title_list = driver.find_elements_by_css_selector(".cassetteRecruit .cassetteRecruit__copy")
+        status_list = driver.find_elements_by_css_selector(".cassetteRecruit .labelEmploymentStatus")
+        table_list = driver.find_elements_by_css_selector(".cassetteRecruit .tableCondition__body")
     # 1ページ分繰り返し
         for name, title, status, table in zip(name_list, title_list, status_list, table_list):
             try:
@@ -111,7 +111,7 @@ def main():
             driver.get(next_page_link)
         else:
             log("最終ページです。")
-        break    
+            break    
 
 
     now =datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
